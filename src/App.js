@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { colorRandom, numRandom } from './services/random'
+import { llenarArray } from './services/llenarArray'
+import './css/AppContainer.css'
+
+
 class App extends Component {
 
-  
   state = {
     nivel: 0,
+    cuadrados: new Array(0),
     color: {
       h: numRandom(0,359),
       s: numRandom(10,90),
@@ -12,7 +16,9 @@ class App extends Component {
     }
   }
 
-  cuadrados = new Array[ Math.pow((this.state.nivel + 1), 2)]
+  // cuadrado = new Array(Math.pow((this.state.nivel + 1),2))
+  // cuadrado = [1,2,3,4]
+  // cuadrado= new Array(4)
 
   backgroundColor = {
     backgroundColor: colorRandom(this.state.color.h, this.state.color.s, this.state.color.l)
@@ -21,15 +27,18 @@ class App extends Component {
   componentDidMount () {
     this.nextLevel()
   }
-
+  
   nextLevel = () => {
     this.setState( (prevState, props) => ({
       nivel: prevState.nivel + 1,
     }))
+    this.setState( (prevState, props) => ({
+      cuadrados: llenarArray( prevState.nivel + 1, prevState.nivel, this.state.cuadrados ),
+    }))
   }
-
+  
   handleClick = ev => {
-
+    this.nextLevel()
   }
 
   render() {
@@ -37,11 +46,15 @@ class App extends Component {
       <div style = {this.backgroundColor} >
         <button onClick={this.handleClick}> Hola </button>
         <p> Nivel: {this.state.nivel} </p>
-        <p> Cuadrados: {this.state.cuadrados} </p>
+        <p> Cuadrado: {this.state.cuadrados.length} </p>
 
-        {
-          
-        }
+        <div className="Cuadrado-container">
+          {
+            this.state.cuadrados.map((item, index)=>{
+              return <p className="Cuadrado" key={index}></p>
+            })
+          }
+        </div>
 
       </div>
     );

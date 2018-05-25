@@ -1,0 +1,13 @@
+.Cuadrado-container {
+  background-color: #1fff;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+}
+
+.Cuadrado {
+  margin: 5px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+}
