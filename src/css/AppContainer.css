@@ -1,8 +1,14 @@
 .Cuadrado-container {
   background-color: #1fff;
-  width: 100%;
-  min-height: 300px;
+  /* width: 100%; */
+  /* min-height: 300px;
   display: flex;
+  flex-wrap: wrap; */
+  
+  
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
 }

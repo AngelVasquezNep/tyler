@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Cuadrado from './components/Cuadrados'
-import { colorRandom, numRandom } from './services/random'
+import { numRandom } from './services/random'
 import llenarArray from './services/llenarArray'
 import './css/AppContainer.css'
 
@@ -63,7 +63,9 @@ class App extends Component {
         <p> CuadradoSelected: {this.state.cuadradoSelected} </p>
         <p> Cuadrado: {this.state.cuadrados.length} </p>
 
-        <div className="Cuadrado-container">
+        <div className="Cuadrado-container"
+             style={{ gridTemplateColumns: `repeat( ${this.state.nivel + 1} , 1fr)` }}
+        >
           {
             this.state.cuadrados.map((item, index)=>{
               return <Cuadrado id={item}
