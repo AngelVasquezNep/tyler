@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { colorRandom, numRandom } from './services/random'
-import { llenarArray } from './services/llenarArray'
+import llenarArray from './services/llenarArray'
 import './css/AppContainer.css'
 
 
@@ -33,7 +33,7 @@ class App extends Component {
       nivel: prevState.nivel + 1,
     }))
     this.setState( (prevState, props) => ({
-      cuadrados: llenarArray( prevState.nivel + 1, prevState.nivel, this.state.cuadrados ),
+        cuadrados: llenarArray( Math.pow((prevState.nivel+1),2), prevState.cuadrados.length, prevState.cuadrados )
     }))
   }
   
