@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {colorRandom} from '../services/random'
+import {colorRandom, numRandom} from '../services/random'
 import '../css/Cuadrados.css'
 
 class Cuadrados extends Component {
@@ -9,12 +9,14 @@ class Cuadrados extends Component {
   }
 
   render() {
+    const { id, cuadradoSelected } = this.props
+    const {h, s, l, lRandom} = this.props.color
     return(
     <div className="Cuadrado"
          onClick = {this.handleClick}
-         style = { this.props.id === this.props.cuadradoSelected ? {backgroundColor: colorRandom(this.props.color.h, this.props.color.s, this.props.color.l)} : {backgroundColor: colorRandom(this.props.color.h, this.props.color.s, this.props.color.lRandom)} }
+         style = { id === cuadradoSelected ? {backgroundColor: colorRandom(h, s, l)} : {backgroundColor: colorRandom(h, s, lRandom)} }
+         title = { id === cuadradoSelected ? 'Este si' : 'Este no' }
          >
-      <p> {this.props.id} </p>
     </div>
     )
   }

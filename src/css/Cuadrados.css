@@ -1,8 +1,10 @@
 .Cuadrado {
-  margin: 5px;
-  width: 90%;
+  /* margin: 5px; */
+  padding: 20px;
+  /* width: 80px; */
+  box-sizing: border-box;
   max-width: 80px;
-  height: 80px;
+  /* height: 80px; */
   background-color: #fff;
   cursor: pointer;
   transition: all .3s;
@@ -14,4 +16,16 @@
 
 .Cuadrado:hover {
   box-shadow: 0 0 0px 3px rgba(214, 0, 243, 0.6);
+}
+
+@media screen and (max-width: 758px) {
+  .Cuadrado {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .Cuadrado {
+    padding: 10px;
+  }
 }

@@ -1,14 +1,16 @@
+.Cuadrado-tablero {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+}
 .Cuadrado-container {
   background-color: #1fff;
-  /* width: 100%; */
-  /* min-height: 300px;
-  display: flex;
-  flex-wrap: wrap; */
-  
-  
   display: grid;
+  padding: 10px 0;
+  grid-gap: 5px;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  box-sizing: border-box;
 }
