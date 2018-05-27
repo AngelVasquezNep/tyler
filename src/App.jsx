@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cuadrado from './components/Cuadrados'
 import { colorRandom, numRandom } from './services/random'
 import llenarArray from './services/llenarArray'
 import './css/AppContainer.css'
@@ -41,17 +42,26 @@ class App extends Component {
     this.nextLevel()
   }
 
+  handleClickCuadrado (id) {
+    console.log("ID: " + id)
+  }
+
   render() {
     return (
       <div style = {this.backgroundColor} >
-        <button onClick={this.handleClick}> Hola </button>
+        <button 
+              style={{padding:'10px 20px', background: "#1ff", border:'none', margin: '30px'}}
+              onClick={this.handleClick}> nextLevel </button>
         <p> Nivel: {this.state.nivel} </p>
         <p> Cuadrado: {this.state.cuadrados.length} </p>
 
         <div className="Cuadrado-container">
           {
             this.state.cuadrados.map((item, index)=>{
-              return <p className="Cuadrado" key={index}></p>
+              return <Cuadrado id={item} 
+                               key={index}
+                               handleClick = {this.handleClickCuadrado}
+                               />
             })
           }
         </div>
