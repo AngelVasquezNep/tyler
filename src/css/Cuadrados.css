@@ -1,0 +1,16 @@
+.Cuadrado {
+  margin: 5px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Cuadrado:hover {
+  box-shadow: 0 0 0px 3px rgba(214, 0, 243, 0.6);
+}
