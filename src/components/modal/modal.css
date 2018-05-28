@@ -12,6 +12,16 @@
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  opacity: .3;
+  transform: scale(1.4);
+  animation: apper .5s forwards;
+}
+
+@keyframes apper {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .Modal-close {
