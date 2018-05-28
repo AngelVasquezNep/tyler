@@ -7,6 +7,7 @@ import Top5 from './components/Top5'
 import {top5initial} from './services/ApiTop5'
 import { numRandom, lightnessRandom } from './services/random'
 import llenarArray from './services/llenarArray'
+import burbuja from './services/burbuja'
 import ModalLose from './components/ModalLose'
 
 class App extends Component {
@@ -29,7 +30,7 @@ class App extends Component {
   componentDidMount () {
     this.nextLevel()
     this.setState({
-      top5: top5initial
+      top5: burbuja(top5initial)
     })
   }
 
