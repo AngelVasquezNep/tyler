@@ -12,7 +12,7 @@ const Footer = props => {
       <div className="Footer-Contacto">
         <p> © Copyright 2018 Ángel Vásquez</p>
         <span>
-          <a href="https://github.com/angelvasqueznep/jonsnow" target="_blank">
+          <a href="https://github.com/angelvasqueznep/tyler" target="_blank">
             <img src={githubImg} alt="github"/> 
           </a>
         </span>  
