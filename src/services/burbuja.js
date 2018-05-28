@@ -17,6 +17,6 @@ export default (burbuja) => {
     contadorVueltas++
     console.log('Vuelta')
   }
-  return burbuja
+  return burbuja.slice(0, 5)
   
 }

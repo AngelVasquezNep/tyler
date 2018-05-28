@@ -125,6 +125,7 @@ class App extends Component {
               >
               <ModalLose
                 puntaje = {this.state.puntajeActual}
+                top5 = { this.state.top5 }
               />
             </Modal>
           </ModalContainer>
