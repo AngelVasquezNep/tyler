@@ -127,7 +127,7 @@ class App extends Component {
             handleClick = {this.handleClickShowTop5}
           />
 
-          <div>
+          <div className="Cuadrado-wrapper">
             <div className="Cuadrado-container"
                 style={{ gridTemplateColumns: `repeat( ${this.state.nivel + 1} , auto)` }}
                 >

@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.Cuadrado-wrapper {
+  overflow-x: hidden;
+}
+
 .Cuadrado-container {
   overflow-x: hidden;
   display: grid;
