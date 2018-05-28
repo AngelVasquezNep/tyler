@@ -3,6 +3,7 @@ import AppContainer from './components/AppContainer'
 import ModalContainer from './components/modal/modalContainer'
 import Modal from './components/modal/modal'
 import Cuadrado from './components/Cuadrados'
+import Header from './components/Header'
 import Top5 from './components/Top5'
 import {top5initial} from './services/ApiTop5'
 import { numRandom, lightnessRandom } from './services/random'
@@ -16,6 +17,7 @@ class App extends Component {
     nivel: 0,
     cuadradoSelected: 0,
     top5: [],
+    isShowTop5:true,
     cuadrados: new Array(0),
     puntajeActual: 0,
     lose: false,
@@ -70,12 +72,15 @@ class App extends Component {
         puntajeActual: prevState.puntajeActual + 1
       }))
     } else {
-      this.setState({
-        lose: true,
-        nivel: 1,
-        cuadradoSelected: numRandom(4, 1),
-        cuadrados: llenarArray( 4, 0, [] )
-      })
+      if( this.state.puntajeActual > 0 ) {
+        this.setState({
+          lose: true,
+          nivel: 1,
+          cuadradoSelected: numRandom(4, 1),
+          cuadrados: llenarArray( 4, 0, [] )
+        })
+      }
+      this.setColor()
     }
   }
 
@@ -89,31 +94,37 @@ class App extends Component {
   }
 
   handleClickCloseModal = () => {
-
     this.setColor()
-
     this.setState({
       puntajeActual: 0,
       lose: false
     })
-  } 
+  }
+
+  handleClickShowTop5 = () => {
+    console.log("click")
+    this.setState({
+      isShowTop5: !this.state.isShowTop5
+    })
+  }
 
   render() {
     const { h, s, l, lRandom } = this.state.color
     return (
       <AppContainer>
+
         <div>
-          <div className="Cuadrado-tablero">
-            <p> Nivel: {this.state.nivel} </p>
-            <p> Puntaje Actual: {this.state.puntajeActual} </p>
-            <span>
-            <p> Color principal: { `hsl(${h}, ${s}%, ${l}%)` } </p>
-            <p> Color único:  { `hsl(${h}, ${s}%, ${lRandom}%)` } </p>
-            </span>
-          </div>
           
+          <Header
+            nivel = {this.state.nivel}
+            puntajeActual = {this.state.puntajeActual}
+            color = {this.state.color}
+          />
+
           <Top5
             top5 = {this.state.top5}
+            isShow = {this.state.isShowTop5}
+            handleClick = {this.handleClickShowTop5}
           />
 
           <div>
@@ -123,8 +134,8 @@ class App extends Component {
               {
                 this.state.cuadrados.map((item, index)=>(
                   <Cuadrado id={item}
-                    cuadradoSelected = {this.state.cuadradoSelected}
-                    color = { this.state.color }
+                  cuadradoSelected = {this.state.cuadradoSelected}
+                  color = { this.state.color }
                     key={index}
                     handleClick = {this.handleClickCuadrado}
                   />
@@ -133,6 +144,7 @@ class App extends Component {
             </div>
           </div>
         </div>
+
         {
           this.state.lose &&
           <ModalContainer>
@@ -141,9 +153,11 @@ class App extends Component {
               handleClick = { this.handleClickCloseModal }
               >
               <ModalLose
+                top5 = {this.state.top5}
+                isShowTop5 = {this.state.isShowTop5}
                 handleClick = { this.handleClickSaveModal }
                 puntaje = {this.state.puntajeActual}
-                top5 = { this.state.top5 }
+                handleClickShowTop5 = {this.handleClickShowTop5}
               />
             </Modal>
           </ModalContainer>

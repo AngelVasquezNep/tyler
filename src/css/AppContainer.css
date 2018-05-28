@@ -3,8 +3,25 @@
   grid-auto-flow: column;
   justify-content: space-evenly;
   background-color: #1fff;
+  align-items: center;
 }
+.Cuadrado-tablero-nivel,
+.Cuadrado-tablero-puntaje {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  align-items: center;
+}
+
+.Cuadrado-tablero-nivel span,
+.Cuadrado-tablero-puntaje span{
+  font-size: 4rem;
+}
+
 .Cuadrado-container {
+  overflow-x: hidden;
   background-color: #1fff;
   display: grid;
   padding: 10px 0;

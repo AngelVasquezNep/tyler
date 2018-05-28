@@ -1,0 +1,18 @@
+.Top5 {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  transition: all .3s;
+  max-height: 350px;
+  overflow: hidden;
+  height: 0;
+}
+
+.Top5--close {
+  display: flex;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+.Top5--close button {
+  margin: 5px auto;
+}

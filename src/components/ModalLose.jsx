@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
+import Top5 from './Top5'
 import burbuja from '../services/burbuja'
+import '../css/ModalLose.css'
 
 class ModalLose extends Component {
-
 
   state = {
     textValue: ''
   }
-
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -33,11 +33,19 @@ class ModalLose extends Component {
 
   render () {
     return(
-      <div>
+      <div className="ModalLose--container">
         <h1>Suerte para la próxima</h1>
+
+        <Top5
+          isShow = {this.props.isShowTop5}
+          handleClick = {this.props.handleClickShowTop5}
+          top5 = {this.props.top5}
+        />
+
         <h2>Puntaje Final: { this.props.puntaje }</h2>
         <form onSubmit = {this.handleSubmit}>
-          <input type="text"
+          <input className = 'ModalLose--input ModalLose--inputText'
+                 type="text"
                  onChange = {this.textChange}
                  ref = {this.setRef}
                  name="user"
@@ -45,7 +53,7 @@ class ModalLose extends Component {
                  id="user" 
                  required
                  />
-          <button type="submit">Enviar</button>
+          <button className="ModalLose--input ModalLose--inputButton" type="submit">Enviar</button>
         </form>
       </div>
     )
