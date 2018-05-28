@@ -85,6 +85,7 @@ class App extends Component {
       puntajeActual: 0,
       lose: false
     })
+    localStorage.setItem('top5', JSON.stringify(this.state.top5))
   }
 
   handleClickCloseModal = () => {
