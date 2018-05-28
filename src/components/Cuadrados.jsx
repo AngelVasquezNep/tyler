@@ -8,12 +8,6 @@ class Cuadrados extends Component {
     this.props.handleClick(this.props.id)
   }
 
-
-
-
-
-
-  
   render() {
     const { id, cuadradoSelected } = this.props
     const {h, s, l, lRandom} = this.props.color
