@@ -12,12 +12,12 @@ const Header = props => {
       <div className="Cuadrado-tablero-puntaje">
           <p>Puntaje:</p> &nbsp; <span> {props.puntajeActual} </span> </div>
       <div>
-        <p> <strong>Color principal:</strong> 
+        <p> <strong>Color principal:</strong> &nbsp; 
             <span style={{background: `hsl(${h}, ${s}%, ${l}%)`}}>
               { `hsl(${h}, ${s}%, ${l}%)` }
             </span>
         </p>
-        <p> <strong>Color único:</strong>
+        <p> <strong>Color único:</strong> &nbsp;
             <span style={{background: `hsl(${h}, ${s}%, ${lRandom}%)`}} >
               { `hsl(${h}, ${s}%, ${lRandom}%)` }
             </span> 

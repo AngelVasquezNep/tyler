@@ -109,7 +109,6 @@ class App extends Component {
   }
 
   render() {
-    const { h, s, l, lRandom } = this.state.color
     return (
       <AppContainer>
 
@@ -143,6 +142,7 @@ class App extends Component {
               }
             </div>
           </div>
+
         </div>
 
         {
