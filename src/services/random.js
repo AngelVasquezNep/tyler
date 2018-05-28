@@ -6,9 +6,9 @@ export const colorRandom = (h, s, l) => {
 
 export const lightnessRandom = (lrandom) => {
   if(lrandom > 50) {
-    return numRandom(1, 35)
+    return numRandom(25, 1)
   }
   else {
-    return numRandom(65, 99)
+    return numRandom(99, 75) 
   }
 }

@@ -8,11 +8,17 @@ class Cuadrados extends Component {
     this.props.handleClick(this.props.id)
   }
 
+
+
+
+
+
+  
   render() {
     const { id, cuadradoSelected } = this.props
     const {h, s, l, lRandom} = this.props.color
     return(
-    <div className="Cuadrado"
+      <div className="Cuadrado"
          onClick = {this.handleClick}
          style = { id === cuadradoSelected ? {backgroundColor: colorRandom(h, s, l)} : {backgroundColor: colorRandom(h, s, lRandom)} }
          title = { id === cuadradoSelected ? 'Este si' : 'Este no' }
