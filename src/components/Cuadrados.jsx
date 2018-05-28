@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {colorRandom, numRandom} from '../services/random'
+import {colorRandom} from '../services/random'
 import '../css/Cuadrados.css'
 
 class Cuadrados extends Component {
