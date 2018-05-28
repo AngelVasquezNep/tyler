@@ -5,6 +5,7 @@ import Modal from './components/modal/modal'
 import Cuadrado from './components/Cuadrados'
 import Header from './components/Header'
 import Top5 from './components/Top5'
+import Footer from './components/Footer'
 import {top5initial} from './services/ApiTop5'
 import { numRandom, lightnessRandom } from './services/random'
 import llenarArray from './services/llenarArray'
@@ -142,6 +143,8 @@ class App extends Component {
               }
             </div>
           </div>
+
+          <Footer/>
 
         </div>
 
