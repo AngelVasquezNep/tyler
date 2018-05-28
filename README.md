@@ -67,7 +67,7 @@ Esta aplicación se puede montar en Now con el comando ``` npm run deploy ```, s
 
 ```state```
 
-Siendo el entrie poit tiene la mayor de las responsabilidades, contiene casi todo el estado de la aplicación.
+Siendo el entry point tiene la mayor de las responsabilidades, contiene casi todo el estado de la aplicación.
 
 ```componentDidMount()```
 
@@ -87,7 +87,7 @@ Setea los colores del estado.
 ```handleClickCuadrado()```
 
 Aquí está la lógica de sí el usuario selecciono correctamente el cuadrado de color diferente.
-En caso de acertar se pasa al siguiente nivel ```nextLevel()```, sí erra se verifica que el puntaje sea mayor a cero para que se despligue el modal, sí es igual a cero sólamente se setea el color.
+En caso de acertar se pasa al siguiente nivel ```nextLevel()```, sí erra se verifica que el puntaje sea mayor a cero para que se despliegue el modal, sí es igual a cero solamente se setea el color.
 
 
 ```handleClickSaveModal()```
@@ -143,7 +143,7 @@ Se han creado servicios para modularizar pedazos de código.
 
 ```llenarArray()```
 
-Dado que no se puede iterar sobre un array vacio, este servicio literalmente llena el array que se le pase por parámetro con números, mismos que después serán usados como ID.
+Dado que no se puede iterar sobre un array vacío, este servicio literalmente llena el array que se le pase por parámetro con números, mismos que después serán usados como ID.
 Recibe 3 parámetros:
   - newSize: Nuevo tamaño que tiene el array.
   - oldSize: Anterior tamaño del mismo.
@@ -163,7 +163,7 @@ Aquí se tienen 3 métodos que se exportan por separado, se pueden importar por 
 
 Literalmente es el método de la burbuja para acomodar elementos de un array dependiendo uno de sus valores.
 Como parámetro recibe el array en cuestión (se hace un clone del mismo porque tuve un fix que no entiendo, asumo que array de parámetro es en realidad una referencia al primero y tiene su scope original, pues el state de mi aplicación se modificaba mientras iteraba sobre él).
-La otra modificación que se hizo fue retornar sólamente los primeros 5 valores.
+La otra modificación que se hizo fue retornar solamente los primeros 5 valores.
 
 ```ApiTop5```
 
@@ -182,13 +182,13 @@ Es una Api 'hardcodeada' con 5 elementos para que, en caso de que en localStorag
 
 ## Dificultades por resolver
 
-La solución de hacer columas dinámicas a través de CSS Grid Layout fue conveniente pero sí la aplicación tuviera usuarios con navegadores viejos, simplemente la UI se rompería. Se trabaja en una solución complementaria.
+La solución de hacer columnas dinámicas a través de CSS Grid Layout fue conveniente pero sí la aplicación tuviera usuarios con navegadores viejos, simplemente la UI se rompería. Se trabaja en una solución complementaria.
 
 ----
 
 ## ¡Gracias!
 
-Fue muy divertido hacer ésto.
+Fue muy divertido hacer esto.
 
 Ángel Vásquez 🚀
 
