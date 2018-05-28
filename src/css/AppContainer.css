@@ -1,6 +1,11 @@
+.AppContainer {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
+
 .Cuadrado-container {
   overflow-x: hidden;
-  background-color: #1fff;
   display: grid;
   padding: 10px 0;
   grid-gap: 5px;

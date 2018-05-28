@@ -113,7 +113,7 @@ class App extends Component {
     return (
       <AppContainer>
 
-        <div>
+        <div className="AppContainer">
           
           <Header
             nivel = {this.state.nivel}
