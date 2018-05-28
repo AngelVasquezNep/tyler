@@ -1,4 +1,7 @@
-export default (burbuja) => {
+export default (oldArray) => {
+
+  const burbuja = Object.assign([],oldArray)
+
   let apuntador1 = 0, apuntador2, contadorVueltas = 0, aux = {}
 
   while ( burbuja.length > contadorVueltas ) {
@@ -15,7 +18,6 @@ export default (burbuja) => {
     apuntador1 = 0
     apuntador2 = 1
     contadorVueltas++
-    console.log('Vuelta')
   }
   return burbuja.slice(0, 5)
   

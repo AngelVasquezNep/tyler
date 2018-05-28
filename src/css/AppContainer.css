@@ -2,6 +2,7 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: space-evenly;
+  background-color: #1fff;
 }
 .Cuadrado-container {
   background-color: #1fff;

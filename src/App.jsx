@@ -28,9 +28,10 @@ class App extends Component {
   }
 
   componentDidMount () {
+    console.log( JSON.parse( localStorage.getItem('top5') ) )
     this.nextLevel()
     this.setState({
-      top5: burbuja(top5initial)
+      top5: JSON.parse( localStorage.getItem('top5') ) || burbuja(top5initial)
     })
   }
 
@@ -43,26 +44,26 @@ class App extends Component {
         lRandom: numRandom(10,90)
       }
     })
-
+    
     this.setState( (prevState, props) => {
       return {
         lRandom: lightnessRandom(prevState.color.l)
       }
     })
-
+    
     this.setState( (prevState, props) => ({
       nivel: prevState.nivel + 1
     }))
-
+    
     this.setState( (prevState, props) => ({
       cuadrados: llenarArray( Math.pow((prevState.nivel+1),2), prevState.cuadrados.length, prevState.cuadrados ),
     }))
-
+    
     this.setState((prevState, props)=>({
       cuadradoSelected: numRandom(prevState.cuadrados.length, 1)
     }))
   }
-
+  
   handleClickCuadrado = (id) => {
     if (this.state.cuadradoSelected === id) {
       this.nextLevel()
@@ -78,14 +79,16 @@ class App extends Component {
       })
     }
   }
-
-  handleClickCloseModal = () => {
+  
+  handleClickCloseModal = (top5) => {
     this.setState({
+      top5: top5,
       puntajeActual: 0,
       lose: false
     })
+    localStorage.setItem('top5', JSON.stringify(top5) )
   }
-
+  
   render() {
     return (
       <AppContainer>
@@ -121,9 +124,10 @@ class App extends Component {
           <ModalContainer>
             <Modal
               botonVisible = {true}
-              handleClick = { this.handleClickCloseModal }
+              // handleClick = { this.handleClickCloseModal }
               >
               <ModalLose
+                handleClick = { this.handleClickCloseModal }
                 puntaje = {this.state.puntajeActual}
                 top5 = { this.state.top5 }
               />
